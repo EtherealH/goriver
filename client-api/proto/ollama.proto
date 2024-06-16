@@ -1,0 +1,17 @@
+    syntax = "proto3";
+
+package ollama;
+
+option go_package = "./;ollamapb";
+
+service ChatbotService {
+  rpc Chat (ChatRequest) returns (ChatResponse);
+}
+
+message ChatRequest {
+  string user_input = 1;
+}
+
+message ChatResponse {
+  string bot_response = 1;
+}

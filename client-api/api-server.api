@@ -1,0 +1,21 @@
+syntax = "v1"
+
+info (
+	title:   "Chatbot API"
+	version: "1.0"
+)
+
+type (
+	ChatRequest {
+		UserInput string `json:"user_input"`
+	}
+	ChatResponse {
+		BotResponse string `json:"bot_response"`
+	}
+)
+
+service apiServer {
+	@handler chat
+	post /chat (ChatRequest) returns (ChatResponse)
+}
+
